@@ -1,0 +1,11 @@
+### dependency
+numpy==1.26.4
+streamlit
+watchdog
+scikit-surprise==1.1.4
+openpyxl
+
+
+### local packages - in setup.py file
+-e .
+### to insta

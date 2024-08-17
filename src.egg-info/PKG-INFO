@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: src
+Version: 0.0.1
+Summary: A small package for Movie Recommender System
+Home-page: https://github.com/fhuadeen/restaurants-recommender-system
+Author: fhuadeen
+Author-email: fhuadbalogun@gmail.com
+License: MIT
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: numpy==1.26.4
+Requires-Dist: streamlit
+Requires-Dist: scikit-surprise==1.1.4
+
+# Restuarants Recommender System
+
+## Setup and Start app
+1. Create and activate Python virtual environment by running:
+```bash
+python3 -m venv venv && source venv/bin/activate
+```
+
+2. Install dependencies by running:
+```bash
+pip install -r requirements
+```
+
+2. Start application by running:
+```bash
+cd src && streamlit run app.py
+```

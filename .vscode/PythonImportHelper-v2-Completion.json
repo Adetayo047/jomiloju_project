@@ -1,0 +1,317 @@
+[
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "streamlit",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "streamlit",
+        "description": "streamlit",
+        "detail": "streamlit",
+        "documentation": {}
+    },
+    {
+        "label": "restaurants",
+        "importPath": "src.config",
+        "description": "src.config",
+        "isExtraImport": true,
+        "detail": "src.config",
+        "documentation": {}
+    },
+    {
+        "label": "run_content_based_recommendation",
+        "importPath": "src.config",
+        "description": "src.config",
+        "isExtraImport": true,
+        "detail": "src.config",
+        "documentation": {}
+    },
+    {
+        "label": "run_collabotive_filtering",
+        "importPath": "src.config",
+        "description": "src.config",
+        "isExtraImport": true,
+        "detail": "src.config",
+        "documentation": {}
+    },
+    {
+        "label": "user_id",
+        "importPath": "src.config",
+        "description": "src.config",
+        "isExtraImport": true,
+        "detail": "src.config",
+        "documentation": {}
+    },
+    {
+        "label": "fetch_restaurant_poster",
+        "importPath": "src.config",
+        "description": "src.config",
+        "isExtraImport": true,
+        "detail": "src.config",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "pickle",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pickle",
+        "description": "pickle",
+        "detail": "pickle",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "joblib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "joblib",
+        "description": "joblib",
+        "detail": "joblib",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "setup",
+        "importPath": "setuptools",
+        "description": "setuptools",
+        "isExtraImport": true,
+        "detail": "setuptools",
+        "documentation": {}
+    },
+    {
+        "label": "restaurant_names",
+        "kind": 5,
+        "importPath": "src.app",
+        "description": "src.app",
+        "peekOfCode": "restaurant_names = restaurants['restaurant_name'].values\nrestaurant_ids = restaurants['restaurant_id'].values\ncf_restaurants = run_collabotive_filtering(user_id=user_id, restaurant_ids=restaurant_ids)\nst.caption(\"Collaborative filttering recommendations\")\ncol1, col2, col3, col4, col5 = st.columns(5)\nwith col1:\n    st.text(cf_restaurants[user_id][0][2])\n    restaurant_id = cf_restaurants[user_id][0][0]\n    st.image(fetch_restaurant_poster(restaurant_id))\nwith col2:",
+        "detail": "src.app",
+        "documentation": {}
+    },
+    {
+        "label": "restaurant_ids",
+        "kind": 5,
+        "importPath": "src.app",
+        "description": "src.app",
+        "peekOfCode": "restaurant_ids = restaurants['restaurant_id'].values\ncf_restaurants = run_collabotive_filtering(user_id=user_id, restaurant_ids=restaurant_ids)\nst.caption(\"Collaborative filttering recommendations\")\ncol1, col2, col3, col4, col5 = st.columns(5)\nwith col1:\n    st.text(cf_restaurants[user_id][0][2])\n    restaurant_id = cf_restaurants[user_id][0][0]\n    st.image(fetch_restaurant_poster(restaurant_id))\nwith col2:\n    st.text(cf_restaurants[user_id][1][2])",
+        "detail": "src.app",
+        "documentation": {}
+    },
+    {
+        "label": "cf_restaurants",
+        "kind": 5,
+        "importPath": "src.app",
+        "description": "src.app",
+        "peekOfCode": "cf_restaurants = run_collabotive_filtering(user_id=user_id, restaurant_ids=restaurant_ids)\nst.caption(\"Collaborative filttering recommendations\")\ncol1, col2, col3, col4, col5 = st.columns(5)\nwith col1:\n    st.text(cf_restaurants[user_id][0][2])\n    restaurant_id = cf_restaurants[user_id][0][0]\n    st.image(fetch_restaurant_poster(restaurant_id))\nwith col2:\n    st.text(cf_restaurants[user_id][1][2])\n    restaurant_id = cf_restaurants[user_id][1][0]",
+        "detail": "src.app",
+        "documentation": {}
+    },
+    {
+        "label": "selected_restaurant",
+        "kind": 5,
+        "importPath": "src.app",
+        "description": "src.app",
+        "peekOfCode": "selected_restaurant = st.selectbox(\n    \"Type or select a restaurant from the dropdown\",\n    restaurant_names\n)\nif st.button('Show Recommendation'):\n    recommended_restaurant_names,recommended_restaurant_posters = run_content_based_recommendation(selected_restaurant)\n    col1, col2, col3, col4, col5 = st.columns(5)\n    st.caption(\"Content based recommendations\")\n    with col1:\n        st.text(recommended_restaurant_names[0])",
+        "detail": "src.app",
+        "documentation": {}
+    },
+    {
+        "label": "load_images_from_folder",
+        "kind": 2,
+        "importPath": "src.config",
+        "description": "src.config",
+        "peekOfCode": "def load_images_from_folder(image_name: str, folder_path: str = folder_path):\n    img_path = os.path.join(folder_path, image_name)\n    image = Image.open(img_path)\n    return image\ndef fetch_restaurant_poster(restaurant_id):\n    restaurant_poster = load_images_from_folder(f\"{restaurant_id}.png\")\n    return restaurant_poster\ndef run_collabotive_filtering(user_id: str, restaurant_ids: List, algo=cf_model, num_results_to_return: int = 5):\n    \"\"\"\n    Predict ratings for new user-item pairs.",
+        "detail": "src.config",
+        "documentation": {}
+    },
+    {
+        "label": "fetch_restaurant_poster",
+        "kind": 2,
+        "importPath": "src.config",
+        "description": "src.config",
+        "peekOfCode": "def fetch_restaurant_poster(restaurant_id):\n    restaurant_poster = load_images_from_folder(f\"{restaurant_id}.png\")\n    return restaurant_poster\ndef run_collabotive_filtering(user_id: str, restaurant_ids: List, algo=cf_model, num_results_to_return: int = 5):\n    \"\"\"\n    Predict ratings for new user-item pairs.\n    Parameters:\n    algo (surprise.AlgoBase): The trained Surprise algorithm.\n    new_data_df (pd.DataFrame): DataFrame with columns 'user_id' and 'restaurant_id'.\n    Returns:",
+        "detail": "src.config",
+        "documentation": {}
+    },
+    {
+        "label": "run_collabotive_filtering",
+        "kind": 2,
+        "importPath": "src.config",
+        "description": "src.config",
+        "peekOfCode": "def run_collabotive_filtering(user_id: str, restaurant_ids: List, algo=cf_model, num_results_to_return: int = 5):\n    \"\"\"\n    Predict ratings for new user-item pairs.\n    Parameters:\n    algo (surprise.AlgoBase): The trained Surprise algorithm.\n    new_data_df (pd.DataFrame): DataFrame with columns 'user_id' and 'restaurant_id'.\n    Returns:\n    pd.DataFrame: DataFrame with columns 'user_id', 'restaurant_id', and 'predicted_rating'.\n    \"\"\"\n    predictions = []",
+        "detail": "src.config",
+        "documentation": {}
+    },
+    {
+        "label": "get_top_n",
+        "kind": 2,
+        "importPath": "src.config",
+        "description": "src.config",
+        "peekOfCode": "def get_top_n(predictions, n=6):\n    top_n = defaultdict(list)\n    for uid, iid, est in predictions:\n        top_n[uid].append([iid, est])\n    # Sort the predictions for each user and retrieve the highest `n` ones.\n    for uid, user_ratings in top_n.items():\n        user_ratings.sort(key=lambda x: x[1], reverse=True)\n        top_n[uid] = user_ratings[:n]\n    return top_n\ndef run_content_based_recommendation(restaurant):",
+        "detail": "src.config",
+        "documentation": {}
+    },
+    {
+        "label": "run_content_based_recommendation",
+        "kind": 2,
+        "importPath": "src.config",
+        "description": "src.config",
+        "peekOfCode": "def run_content_based_recommendation(restaurant):\n    index = restaurants[restaurants['restaurant_name'] == restaurant].index[0]\n    distances = sorted(list(enumerate(similarity[index])), reverse=True, key=lambda x: x[1])\n    recommended_restaurant_names = []\n    recommended_restaurant_posters = []\n    for i in distances[1:6]:\n        # fetch the restaurant poster\n        restaurant_id = restaurants.iloc[i[0]].restaurant_id\n        recommended_restaurant_posters.append(fetch_restaurant_poster(restaurant_id))\n        recommended_restaurant_names.append(restaurants.iloc[i[0]].restaurant_name)",
+        "detail": "src.config",
+        "documentation": {}
+    },
+    {
+        "label": "USER_IDS",
+        "kind": 5,
+        "importPath": "src.config",
+        "description": "src.config",
+        "peekOfCode": "USER_IDS = [f'U{str(i).zfill(3)}' for i in range(100)]\nuser_id = random.choice(USER_IDS)\nfolder_path = \"../images\"\nrestaurants = pickle.load(open('../artifacts/restaurants_list.pkl','rb'))\nsimilarity = pickle.load(open('../artifacts/restaurants_similarity.pkl','rb'))\ncf_model = joblib.load('../models/cf_model.pkl')\n# Function to load images from a folder\ndef load_images_from_folder(image_name: str, folder_path: str = folder_path):\n    img_path = os.path.join(folder_path, image_name)\n    image = Image.open(img_path)",
+        "detail": "src.config",
+        "documentation": {}
+    },
+    {
+        "label": "user_id",
+        "kind": 5,
+        "importPath": "src.config",
+        "description": "src.config",
+        "peekOfCode": "user_id = random.choice(USER_IDS)\nfolder_path = \"../images\"\nrestaurants = pickle.load(open('../artifacts/restaurants_list.pkl','rb'))\nsimilarity = pickle.load(open('../artifacts/restaurants_similarity.pkl','rb'))\ncf_model = joblib.load('../models/cf_model.pkl')\n# Function to load images from a folder\ndef load_images_from_folder(image_name: str, folder_path: str = folder_path):\n    img_path = os.path.join(folder_path, image_name)\n    image = Image.open(img_path)\n    return image",
+        "detail": "src.config",
+        "documentation": {}
+    },
+    {
+        "label": "folder_path",
+        "kind": 5,
+        "importPath": "src.config",
+        "description": "src.config",
+        "peekOfCode": "folder_path = \"../images\"\nrestaurants = pickle.load(open('../artifacts/restaurants_list.pkl','rb'))\nsimilarity = pickle.load(open('../artifacts/restaurants_similarity.pkl','rb'))\ncf_model = joblib.load('../models/cf_model.pkl')\n# Function to load images from a folder\ndef load_images_from_folder(image_name: str, folder_path: str = folder_path):\n    img_path = os.path.join(folder_path, image_name)\n    image = Image.open(img_path)\n    return image\ndef fetch_restaurant_poster(restaurant_id):",
+        "detail": "src.config",
+        "documentation": {}
+    },
+    {
+        "label": "restaurants",
+        "kind": 5,
+        "importPath": "src.config",
+        "description": "src.config",
+        "peekOfCode": "restaurants = pickle.load(open('../artifacts/restaurants_list.pkl','rb'))\nsimilarity = pickle.load(open('../artifacts/restaurants_similarity.pkl','rb'))\ncf_model = joblib.load('../models/cf_model.pkl')\n# Function to load images from a folder\ndef load_images_from_folder(image_name: str, folder_path: str = folder_path):\n    img_path = os.path.join(folder_path, image_name)\n    image = Image.open(img_path)\n    return image\ndef fetch_restaurant_poster(restaurant_id):\n    restaurant_poster = load_images_from_folder(f\"{restaurant_id}.png\")",
+        "detail": "src.config",
+        "documentation": {}
+    },
+    {
+        "label": "similarity",
+        "kind": 5,
+        "importPath": "src.config",
+        "description": "src.config",
+        "peekOfCode": "similarity = pickle.load(open('../artifacts/restaurants_similarity.pkl','rb'))\ncf_model = joblib.load('../models/cf_model.pkl')\n# Function to load images from a folder\ndef load_images_from_folder(image_name: str, folder_path: str = folder_path):\n    img_path = os.path.join(folder_path, image_name)\n    image = Image.open(img_path)\n    return image\ndef fetch_restaurant_poster(restaurant_id):\n    restaurant_poster = load_images_from_folder(f\"{restaurant_id}.png\")\n    return restaurant_poster",
+        "detail": "src.config",
+        "documentation": {}
+    },
+    {
+        "label": "cf_model",
+        "kind": 5,
+        "importPath": "src.config",
+        "description": "src.config",
+        "peekOfCode": "cf_model = joblib.load('../models/cf_model.pkl')\n# Function to load images from a folder\ndef load_images_from_folder(image_name: str, folder_path: str = folder_path):\n    img_path = os.path.join(folder_path, image_name)\n    image = Image.open(img_path)\n    return image\ndef fetch_restaurant_poster(restaurant_id):\n    restaurant_poster = load_images_from_folder(f\"{restaurant_id}.png\")\n    return restaurant_poster\ndef run_collabotive_filtering(user_id: str, restaurant_ids: List, algo=cf_model, num_results_to_return: int = 5):",
+        "detail": "src.config",
+        "documentation": {}
+    },
+    {
+        "label": "REPO_NAME",
+        "kind": 5,
+        "importPath": "setup",
+        "description": "setup",
+        "peekOfCode": "REPO_NAME = \"restaurants-recommender-system\"\nAUTHOR_USER_NAME = \"fhuadeen\"\nSRC_REPO = \"src\"\nLIST_OF_REQUIREMENTS = [\n    'numpy==1.26.4',\n    'streamlit',\n    'scikit-surprise==1.1.4',\n]\nsetup(\n    name=SRC_REPO,",
+        "detail": "setup",
+        "documentation": {}
+    },
+    {
+        "label": "AUTHOR_USER_NAME",
+        "kind": 5,
+        "importPath": "setup",
+        "description": "setup",
+        "peekOfCode": "AUTHOR_USER_NAME = \"fhuadeen\"\nSRC_REPO = \"src\"\nLIST_OF_REQUIREMENTS = [\n    'numpy==1.26.4',\n    'streamlit',\n    'scikit-surprise==1.1.4',\n]\nsetup(\n    name=SRC_REPO,\n    version=\"0.0.1\",",
+        "detail": "setup",
+        "documentation": {}
+    },
+    {
+        "label": "SRC_REPO",
+        "kind": 5,
+        "importPath": "setup",
+        "description": "setup",
+        "peekOfCode": "SRC_REPO = \"src\"\nLIST_OF_REQUIREMENTS = [\n    'numpy==1.26.4',\n    'streamlit',\n    'scikit-surprise==1.1.4',\n]\nsetup(\n    name=SRC_REPO,\n    version=\"0.0.1\",\n    author=AUTHOR_USER_NAME,",
+        "detail": "setup",
+        "documentation": {}
+    },
+    {
+        "label": "LIST_OF_REQUIREMENTS",
+        "kind": 5,
+        "importPath": "setup",
+        "description": "setup",
+        "peekOfCode": "LIST_OF_REQUIREMENTS = [\n    'numpy==1.26.4',\n    'streamlit',\n    'scikit-surprise==1.1.4',\n]\nsetup(\n    name=SRC_REPO,\n    version=\"0.0.1\",\n    author=AUTHOR_USER_NAME,\n    description=\"A small package for Movie Recommender System\",",
+        "detail": "setup",
+        "documentation": {}
+    }
+]
