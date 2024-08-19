@@ -15,10 +15,10 @@ USER_IDS = [f'U{str(i).zfill(3)}' for i in range(100)]
 user_id = random.choice(USER_IDS)
 
 
-folder_path = "../images"
-restaurants = pickle.load(open('../artifacts/restaurants_list.pkl','rb'))
-similarity = pickle.load(open('../artifacts/restaurants_similarity.pkl','rb'))
-cf_model = joblib.load('../models/cf_model.pkl')
+folder_path = "images"
+restaurants = pickle.load(open('artifacts/restaurants_list.pkl','rb'))
+similarity = pickle.load(open('artifacts/restaurants_similarity.pkl','rb'))
+cf_model = joblib.load('models/cf_model.pkl')
 
 
 # Extract the first item from each list in the columns

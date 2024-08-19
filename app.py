@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import os
-from config import (
+from src.config import (
     restaurants,
     run_content_based_recommendation,
     run_collabotive_filtering,
